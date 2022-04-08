@@ -1,0 +1,3 @@
+imdb:
+  key: "chave"
+  uri: "https://imdb-api.com/en/API/Top250Movies/"
