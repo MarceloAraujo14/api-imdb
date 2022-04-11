@@ -1,6 +1,7 @@
 package com.mbaraujo.imdb.api.controller;
 
 
+import com.mbaraujo.imdb.api.model.MovieModel;
 import com.mbaraujo.imdb.api.request.MovieRequest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,12 +20,16 @@ public class MoviesController {
         this.movieRequest = movieRequest;
     }
 
-    @GetMapping("/most-popular")
-    public ResponseEntity<String> getMostPopularMovies(){
-        List<String> movies = movieRequest.getMovies("https://imdb-api.com/en/API/Top250Movies/");
-        for (String movie: movies) {
-            System.out.println(movie + "\n");
-        }
-        return ResponseEntity.ok().body("lista");
+    @GetMapping(value = "/most-popular", produces = "application/json")
+    public ResponseEntity getMostPopularMovies() throws Exception{
+
+        List<MovieModel> movies = movieRequest.getMovies("https://imdb-api.com/en/API/Top250Movies/");
+
+        return ResponseEntity.ok().body(movies);
     }
+
+
+
+
+
 }
