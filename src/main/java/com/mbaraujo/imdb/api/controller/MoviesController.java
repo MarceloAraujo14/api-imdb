@@ -27,7 +27,6 @@ public class MoviesController {
     public String getMostPopularMovies(Model model) throws Exception{
         List<MovieModel> movies = movieRequest.getMovies("https://imdb-api.com/en/API/Top250Movies/");
 
-//        model.addAttribute("movie", movies.get(0));
         model.addAttribute("movies", movies);
         return "index";
     }

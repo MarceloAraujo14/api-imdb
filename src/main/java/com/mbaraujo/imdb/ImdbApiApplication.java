@@ -6,10 +6,10 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 @SpringBootApplication
 @EnableWebMvc
-public class ConsumerApplication {
+public class ImdbApiApplication {
 
 	public static void main(String[] args){
-		SpringApplication.run(ConsumerApplication.class);
+		SpringApplication.run(ImdbApiApplication.class);
 
 
 	}
